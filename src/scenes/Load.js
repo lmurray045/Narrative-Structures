@@ -13,6 +13,13 @@ class Load extends Phaser.Scene {
             endFrame: 41
         })
 
+        this.load.spritesheet('invis', 'invis.png', {
+            frameWidth: 16,
+            frameHeight: 16,
+            startFrame: 0,
+            endFrame: 0
+        })
+
         this.load.tilemapTiledJSON('tilemapJSON', 'tilemap.json')
 
         //audio

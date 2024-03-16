@@ -22,6 +22,6 @@ class Keys extends Phaser.Scene {
 
     create() {
         console.log("keysScene")
-        this.scene.launch('loadScene')
+        this.scene.launch('menuScene')
     }
 }

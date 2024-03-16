@@ -1,4 +1,12 @@
 { "compressionlevel":-1,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"json",
+         "target":"tilemap.json"
+        }
+    },
  "height":30,
  "infinite":false,
  "layers":[
@@ -139,8 +147,20 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":247.52040726762,
-                 "y":439.743702273326
+                 "x":247.52,
+                 "y":439.744
+                }, 
+                {
+                 "height":0,
+                 "id":2,
+                 "name":"text_1",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":263.716814159292,
+                 "y":340.70796460177
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -149,7 +169,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":2,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",

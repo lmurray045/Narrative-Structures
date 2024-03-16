@@ -12,7 +12,6 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         console.log('player creation')
 
         this.KEYS = scene.KEYS
-        console.log('player creation 2')
         console.log(`keys: ${this.keys}`)
     }
 
