@@ -6,6 +6,7 @@ class Menu extends Phaser.Scene {
     preload() {
         this.load.bitmapFont('dogica_font', 'assets/fonts/dogica.png', 'assets/fonts/dogica.xml')
         this.load.bitmapFont('dogica_reg_font', 'assets/fonts/dogica_reg.png', 'assets/fonts/dogica_reg.xml')
+        this.load.bitmapFont('fipps', 'assets/fonts/Fipps.png', 'assets/fonts/Fipps.xml')
     }
 
     create() {

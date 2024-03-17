@@ -13,7 +13,7 @@ class Dialouge extends Phaser.Physics.Arcade.Sprite{
     }
 
     displayText() {
-        this.box = this.scene.add.bitmapText(this.x, this.y - 10, 'dogica_font', this.dialouge, this.size, 1).setOrigin(0.5, 1).setAlpha(0)
+        this.box = this.scene.add.bitmapText(this.x, this.y - 10, 'fipps', this.dialouge, this.size, 1).setOrigin(0.5, 1).setAlpha(0)
         this.boxTween = this.scene.tweens.chain({
             targets: this.box,
             loop: 0,
