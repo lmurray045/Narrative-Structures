@@ -104,8 +104,6 @@ class Load extends Phaser.Scene {
             })
         })
 
-        console.log(this.anims)
-
     }
 
     update() {

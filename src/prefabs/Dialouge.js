@@ -13,7 +13,7 @@ class Dialouge extends Phaser.Physics.Arcade.Sprite{
     }
 
     displayText() {
-        this.box = this.scene.add.bitmapText(this.x, this.y - 10, 'fipps', this.dialouge, this.size, 1).setOrigin(0.5, 1).setAlpha(0)
+        this.box = this.scene.add.bitmapText(this.x, this.y - 20, 'fipps', this.dialouge, this.size, 1).setOrigin(0.5, 1).setAlpha(0)
         this.boxTween = this.scene.tweens.chain({
             targets: this.box,
             loop: 0,
@@ -35,6 +35,39 @@ class Dialouge extends Phaser.Physics.Arcade.Sprite{
                 },
             ]
         })
+    }
+
+    dicotomy(obj1, obj2, callback1, callback2, tsize, ){
+        this.t1 = this.scene.add.dynamicBitmapText(this.x - 20, this.y - 10, 'fipps', obj1, tsize, 1).setOrigin(.5).setInteractive()
+        this.t2 = this.scene.add.dynamicBitmapText(this.x + 20, this.y - 10, 'fipps', obj2, tsize, 1).setOrigin(.5).setInteractive()
+
+        //t1 code
+        this.t1.on('pointerdown', function (pointer)
+        {
+            callback1()
+        });
+        this.t1.on('pointerout', function (pointer)
+        {
+            this.clearTint();
+        });
+        this.t1.on('pointerover', function (pointer)
+        {
+            this.setTint(0x00ff0);
+        });
+
+        //t2 code
+        this.t2.on('pointerdown', function (pointer)
+        {
+            callback2()
+        });
+        this.t2.on('pointerout', function (pointer)
+        {
+            this.clearTint();
+        });
+        this.t2.on('pointerover', function (pointer)
+        {
+            this.setTint(0x00ff0);
+        });
     }
 
     update() {

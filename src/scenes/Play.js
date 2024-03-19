@@ -35,7 +35,7 @@ class Play extends Phaser.Scene {
     
 
         //players
-        this.p1 = new Player(this, p1spawn.x, p1spawn.y, 'p1sheet', 0)
+        this.p1 = new Player(this, p1spawn.x, p1spawn.y, 'p1sheet', 0).setInteractive()
         //this.cam = this.cameras.add(0, 0, 680, 480)
         this.cameras.main.startFollow(this.p1, false, 1, 1)
         this.p1.body.onOverlap = true
@@ -66,6 +66,13 @@ class Play extends Phaser.Scene {
         this.physics.add.overlap(this.p1, this.textGroup, (player, obj) => {
             if(Phaser.Input.Keyboard.JustDown(this.KEYS.INTERACT)) {
                 obj.displayText()
+                obj.dicotomy("yes", 'no', () => {
+                    console.log("yes")
+                },
+                () =>
+                {
+                    console.log("no")
+                }, 12)
             }
         })
         
