@@ -56,6 +56,8 @@ class Play extends Phaser.Scene {
         const choicespawn = map.findObject('Sprites', (obj) => obj.name === 'delayed_choice')
         const goodspawn = map.findObject('Sprites', (obj) => obj.name === 'good_tree')
         const badspawn = map.findObject('Sprites', (obj) => obj.name === 'evil_tree')
+        const qspawn = map.findObject('Sprites', (obj) => obj.name === 'question')
+        const aspawn = map.findObject('Sprites', (obj) => obj.name === 'answer')
 
 
         //creation
@@ -212,6 +214,22 @@ class Play extends Phaser.Scene {
             }
         }
 
+        this.masterDict["A + for you"] = () => {
+            let next = `Correct ${playerName}!\nYour reward is... uh...\nI can't think\nof anything.`
+            this.next = new Dialouge(this, aspawn.x, aspawn.y, 'invis', 0, next, 10000, 8, false)
+            this.next.displayText()
+            this.next.onOverlap = true
+            this.textGroup.add(this.next)
+        }
+
+        this.masterDict["i love 80j"] = () => {
+            let next = `I'm sorry ${playerName},\nthat's incorrect.`
+            this.next = new Dialouge(this, aspawn.x, aspawn.y, 'invis', 0, next, 10000, 8, false)
+            this.next.displayText()
+            this.next.onOverlap = true
+            this.textGroup.add(this.next)
+        }
+
         //naming
         let name1 = "One of the most important types\nof narrative is naming!\nWhat's your name traveler?"
         this.name1 = new Dialouge(this, namespawn.x, namespawn.y, 'invis', 0, name1, 10000, 8, true, "Samantha Gorman", "Gamantha Sorman")
@@ -259,6 +277,16 @@ class Play extends Phaser.Scene {
         this.bad = new Dialouge(this, badspawn.x, badspawn.y, 'invis', 0, bad, 10000, 8, true, "Who's Ronny?", "Why Evil?", "evil")
         this.bad.onOverlap = true
         this.textGroup.add(this.bad)
+
+        let q = 'Welcome to Challenge-Gated-\nContent Castle!\nIn order to get more\nlexia, you must\nsolve the puzzle before\nyou and answer my comrade!\nYour hint is "01000001"'
+        this.q = new Dialouge(this, qspawn.x, qspawn.y, 'invis', 0, q, 15000, 8, false)
+        this.q.onOverlap = true
+        this.textGroup.add(this.q)
+
+        let a = 'What is the correct\nanswer to the cypher?'
+        this.a = new Dialouge(this, aspawn.x, aspawn.y, 'invis', 0, a, 10000, 8, true, "A + for you", "i love 80j")
+        this.a.onOverlap = true
+        this.textGroup.add(this.a)
 
         //physics and colliders----------------------------------
 
