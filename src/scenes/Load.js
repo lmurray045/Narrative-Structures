@@ -6,6 +6,7 @@ class Load extends Phaser.Scene {
     preload() {
         this.load.path = './assets/'
         this.load.image('tilesetImage', 'AllAssetsPreview.png')
+        this.load.image('fade', 'fade.png')
         this.load.spritesheet('playerSheet', 'AnimationSheet.png', {
             frameWidth: 24,
             frameHeight: 24,
@@ -22,14 +23,9 @@ class Load extends Phaser.Scene {
 
         this.load.tilemapTiledJSON('tilemapJSON', 'tilemap.json')
 
-        //audio
-        this.load.audio('jump', 'jump.wav')
-        this.load.audio('hurt', 'hurt.wav')
-        this.load.audio('shoot', 'shoot.wav')
     }
 
     create() {
-        console.log("Load Scene")
 
         //p1 Animations-------------------------------------------
 

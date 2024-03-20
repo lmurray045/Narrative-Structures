@@ -4,11 +4,20 @@ class Play extends Phaser.Scene {
     }
 
     init() {
-
+        this.cameras.main.fadeIn(100);
+        const fxCamera = this.cameras.main.postFX.addPixelate(40);
+        this.add.tween({
+            targets: fxCamera,
+            duration: 700,
+            amount: -1,
+            onComplete: () => {
+                this.cameras.main.postFX.destroy();
+            }
+        });
     }
+    
 
     create() {
-        console.log("Play Scene")
         
         //tilemap creation
         const map = this.add.tilemap('tilemapJSON')
@@ -39,6 +48,14 @@ class Play extends Phaser.Scene {
         //this.cam = this.cameras.add(0, 0, 680, 480)
         this.cameras.main.startFollow(this.p1, false, 1, 1)
         this.p1.body.onOverlap = true
+
+        //fade in
+        this.fade = this.add.sprite(0, 0, 'fade')
+        this.fadeTween = this.tweens.add({
+            targets: this.fade,
+            alpha: {from: 1, to: 0},
+            duration: 1500
+        })
 
         //text objects-------------------------------------------------
 

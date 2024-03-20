@@ -4,8 +4,8 @@
     //a demo of all the narrative structures described by Aaron Reed
 //total hours: 30
 //Citations: 
-    //STATE MACHINE CODE    
-        //statemachine.js is taken from professor Altices "CP-Scrolling-States" repositiory
+    ///KEY SCENE UNDERLAY
+        //the method of creating a key scene underlay was taken from StinOfSin: https://phaser.discourse.group/t/configure-keyboard-inputs-once-for-all-scenes-to-use/10470/6
 
 
 let config = {
