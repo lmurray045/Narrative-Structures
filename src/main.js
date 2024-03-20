@@ -35,6 +35,7 @@ let game = new Phaser.Game(config)
 let cursors
 
 let playerName = "player"
+let playerMoral = 'good'
 
 //set UI sizes
 let borderUISize = game.config.height / 15
