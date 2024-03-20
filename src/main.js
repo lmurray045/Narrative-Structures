@@ -1,7 +1,7 @@
 //Liam Murray
 //Narrative Structures
 //Description:
-    //a demo of all the narrative structures described by 
+    //a demo of all the narrative structures described by Aaron Reed
 //total hours: 30
 //Citations: 
     //STATE MACHINE CODE    
