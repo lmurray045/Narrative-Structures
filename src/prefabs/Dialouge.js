@@ -1,5 +1,5 @@
 class Dialouge extends Phaser.Physics.Arcade.Sprite{
-    constructor(scene, x, y, texture, frame, words, time, size, tree, text1, text2) {
+    constructor(scene, x, y, texture, frame, words, time, size, tree, text1, text2, morality) {
         super(scene, x, y, texture, frame)
         scene.add.existing(this)
         scene.physics.add.existing(this)
@@ -15,11 +15,21 @@ class Dialouge extends Phaser.Physics.Arcade.Sprite{
         this.opt1 = text1
         this.opt2 = text2
 
+        this.moral = morality
+
         this.box
     }
 
     displayText() {
-        this.box = this.scene.add.bitmapText(this.x, this.y - 35, 'fipps', this.dialouge, this.size, 1).setOrigin(0.5, 1).setAlpha(0)
+        if(this.moral == "evil" && playerMoral == 'good') {
+            this.box = this.scene.add.bitmapText(this.x, this.y - 35, 'fipps', "Hmph!", this.size, 1).setOrigin(0.5, 1).setAlpha(0)
+            this.tree = false
+        }else if(this.moral == "good" && playerMoral == 'evil') {
+            this.box = this.scene.add.bitmapText(this.x, this.y - 35, 'fipps', "Hmph!", this.size, 1).setOrigin(0.5, 1).setAlpha(0)
+            this.tree = false
+        }else{
+            this.box = this.scene.add.bitmapText(this.x, this.y - 35, 'fipps', this.dialouge, this.size, 1).setOrigin(0.5, 1).setAlpha(0)
+        }      
         this.boxTween = this.scene.tweens.chain({
             targets: this.box,
             loop: 0,
@@ -43,7 +53,7 @@ class Dialouge extends Phaser.Physics.Arcade.Sprite{
         })
     }
 
-    dicotomy(obj1, obj2, callback1, callback2, tsize, ) {
+    dicotomy(obj1, obj2, callback1, callback2, tsize) {
         this.t1 = this.scene.add.dynamicBitmapText(this.x, this.y - 25, 'fipps', obj1, tsize, 1).setOrigin(.5).setInteractive().setAlpha(0)
         this.t2 = this.scene.add.dynamicBitmapText(this.x, this.y - 10, 'fipps', obj2, tsize, 1).setOrigin(.5).setInteractive().setAlpha(0)
 

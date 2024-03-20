@@ -18,7 +18,7 @@ class Menu extends Phaser.Scene {
         // add title text
         this.add.bitmapText(game.config.width / 2, (game.config.height / 2) - 32, 'dogica_font', ' Narrative\nStructures', 20).setOrigin(0.5)
         this.add.bitmapText(game.config.width / 2, game.config.height / 2 + 32, 'dogica_font', 'Press SPACE to start', 15).setOrigin(0.5)
-        //this.add.bitmapText(game.config.width / 2, (game.config.height / 2) + 40, 'dogica_font', 'Press P for Player Controls', 7).setOrigin(0.5)
+        this.add.bitmapText(game.config.width / 2, (game.config.height / 2) + 60, 'dogica_font', 'Press P for Player Controls', 7).setOrigin(0.5)
 
     }
 

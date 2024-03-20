@@ -84,7 +84,6 @@ class Play extends Phaser.Scene {
             this.next.onOverlap = true
             this.textGroup.add(this.next)
             playerName = 'Gamantha'
-            console.log(playerName)
         }
 
         this.masterDict['{-- Good'] = () => {
@@ -94,7 +93,6 @@ class Play extends Phaser.Scene {
             this.next.onOverlap = true
             this.textGroup.add(this.next)
             playerMoral = 'good'
-            console.log(playerMoral)
         }
 
         this.masterDict['Evil --}'] = () => {
@@ -253,12 +251,12 @@ class Play extends Phaser.Scene {
         //trees
 
         let good = "Glad you chose the\ngood side, unlike my\nevil twin over there.\nThat degenerate..."
-        this.good = new Dialouge(this, goodspawn.x, goodspawn.y, 'invis', 0, good, 10000, 8, true, "Good Side?", "Evil Twin?")
+        this.good = new Dialouge(this, goodspawn.x, goodspawn.y, 'invis', 0, good, 10000, 8, true, "Good Side?", "Evil Twin?", "good")
         this.good.onOverlap = true
         this.textGroup.add(this.good)
 
         let bad = "Phew! Was worried\nfor a sec that you were\ngonna go with 'ol goodie\ntwo shoes Ronny over\nthere."
-        this.bad = new Dialouge(this, badspawn.x, badspawn.y, 'invis', 0, bad, 10000, 8, true, "Who's Ronny?", "Why Evil?")
+        this.bad = new Dialouge(this, badspawn.x, badspawn.y, 'invis', 0, bad, 10000, 8, true, "Who's Ronny?", "Why Evil?", "evil")
         this.bad.onOverlap = true
         this.textGroup.add(this.bad)
 

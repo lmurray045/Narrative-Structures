@@ -16,7 +16,7 @@ let config = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true,
+            //debug: true,
             //gravity: { y: 1000 }
         }
     },
@@ -27,7 +27,7 @@ let config = {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
-    scene: [Keys, Menu, Play, Load]
+    scene: [Keys, Menu, Controls, Play, Load]
 }
 
 let game = new Phaser.Game(config)
@@ -35,7 +35,7 @@ let game = new Phaser.Game(config)
 let cursors
 
 let playerName = "player"
-let playerMoral = 'good'
+let playerMoral = 'wawa'
 
 //set UI sizes
 let borderUISize = game.config.height / 15
